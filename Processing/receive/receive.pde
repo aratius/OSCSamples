@@ -35,9 +35,12 @@ void oscEvent(OscMessage theOscMessage) {
       float value = theOscMessage.get(0).floatValue();                       // 1個目の引数（float）を受け取る
       posY = value * height;                                                            // posYの値を更新, valueの値の幅は0-1なので、画面幅にマッピング
     }
-  } else if(theOscMessage.checkAddrPattern("/mouse/isPresssed")==true) {  // OSCアドレスが"/mouse/isPressed"の時
+  } else if(theOscMessage.checkAddrPattern("/mouse/isPressed")==true) {  // OSCアドレスが"/mouse/isPressed"の時
     if(theOscMessage.checkTypetag("i")) {                                        // intの単体引数の時
       int value = theOscMessage.get(0).intValue();                       // 1個目の引数（float）を受け取る
+      isPressed = value == 1;                                                            // posYの値を更新, valueの値の幅は0-1なので、画面幅にマッピング
+    } else if(theOscMessage.checkTypetag("f")) {                                        // intの単体引数の時
+      float value = theOscMessage.get(0).floatValue();                       // 1個目の引数（float）を受け取る
       isPressed = value == 1;                                                            // posYの値を更新, valueの値の幅は0-1なので、画面幅にマッピング
     }    
   }
