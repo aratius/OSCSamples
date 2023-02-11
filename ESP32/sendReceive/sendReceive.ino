@@ -29,7 +29,7 @@ void setup () {
   bool isConnected = true;
   delay(1000);
   
-  Serial.print("INFO : Wi-Fi Start Connect.");
+  Serial.print("INFO : Trying to connect Wi-Fi");
 
   // WiFiがつながるまでwhileを回す
   while (WiFi.status() != WL_CONNECTED) { 
