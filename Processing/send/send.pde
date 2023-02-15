@@ -5,6 +5,7 @@ import netP5.*;
 OscP5 oscP5;  // OscP5のインスタンス
 NetAddress myRemoteLocation;  // OSC送信時に使うリモート（送信先）の情報を含んだオブジェクト
 
+String REMOTE_IP = "192.168.0.102"; 
 final int PORTOUTGOING = 12000;
 final int PORTINCOMMING = 12001;
 
@@ -13,12 +14,11 @@ void setup() {
   frameRate(25);
 
   oscP5 = new OscP5(this, PORTINCOMMING);  // OscP5のインスタンス作成
-  
-  myRemoteLocation = new NetAddress("127.0.0.1", PORTOUTGOING);  // リモート（送信先）のオブジェクトを作成
+  myRemoteLocation = new NetAddress(REMOTE_IP, PORTOUTGOING);  // リモート（送信先）のオブジェクトを作成
 }
 
 void draw() {
-background(0);  
+  background(0);  
   sendMousePosition();
   if(mousePressed) fill(255, 0, 0);
   else fill(255, 255, 255);
@@ -34,15 +34,20 @@ void sendMousePosition() {
   OscMessage posYMessage = new OscMessage("/position/y");  // OSCメッセージ（アドレス: "/position/y"）のためのOscMessageオブジェクトを作成
   posYMessage.add((float)mouseY / (float)height);  // 送る値をバインド
   oscP5.send(posYMessage, myRemoteLocation);  // 送信
+  
 }
 
 // マウス押した時にOSC送信する
 void mousePressed() {
   sendMouseStatus(true);
+  sendMouseStatus(true);
+  sendMouseStatus(true);
 }
 
 // マウス離した時にOSC送信する
 void mouseReleased() {
+  sendMouseStatus(false);
+  sendMouseStatus(false);
   sendMouseStatus(false);
 }
 

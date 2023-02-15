@@ -54,6 +54,16 @@ void setup () {
   isConnecting = false;
 }
 
+void loop () {
+  OscWiFi.update();
+
+  // 例）
+  // 送信実装（実際には送ってません）
+  if(false) {  // ボタンが押されたら...とか
+    sendOsc("/button/status", 1);
+  }
+}
+
 void setUpOsc() {
   // 受信のリスナー設定
   OscWiFi.subscribe(portIncomming, "/app/status", onOscReceivedStatus);
@@ -92,16 +102,6 @@ void onOscReceivedAny(OscMessage& m) {
     // 何らかの処理
   }
 
-}
-
-void loop () {
-  OscWiFi.update();
-
-  // 例）
-  // 送信実装（実際には送ってません）
-  if(false) {  // ボタンが押されたら...とか
-    sendOsc("/button/status", 1);
-  }
 }
 
 void sendOsc(char* address, int val){
