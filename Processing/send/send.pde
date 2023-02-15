@@ -5,7 +5,7 @@ import netP5.*;
 OscP5 oscP5;  // OscP5のインスタンス
 NetAddress myRemoteLocation;  // OSC送信時に使うリモート（送信先）の情報を含んだオブジェクト
 
-String REMOTE_IP = "192.168.0.102"; 
+String REMOTE_IP = "127.0.0.1"; 
 final int PORTOUTGOING = 12000;
 final int PORTINCOMMING = 12001;
 
