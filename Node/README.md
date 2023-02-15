@@ -1,5 +1,7 @@
 # Node.js OSC Samples
 
+Implemented with [node-osc](https://www.npmjs.com/package/node-osc)
+
 ## Building environments
 
 ```

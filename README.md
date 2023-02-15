@@ -12,5 +12,5 @@ Implementation of OSC (Open Sound Control) samples in various environments.
 | M5StickC+ | [ArduinoOSC](https://github.com/hideakitai/ArduinoOSC) | | ✅ | 
 | Max/MSP | | | ✅ |
 | SonicPi | | | |
-| Node.js | [node-osc](https://www.npmjs.com/package/node-osc) | | |
+| Node.js | [node-osc](https://www.npmjs.com/package/node-osc) | | ✅ |
 | openFrameworks | [ofxOsc](https://openframeworks.cc/documentation/ofxOsc/) | | |
