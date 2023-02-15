@@ -13,4 +13,4 @@ Implementation of OSC (Open Sound Control) samples in various environments.
 | Max/MSP | | | ✅ |
 | SonicPi | | | |
 | Node.js | [node-osc](https://www.npmjs.com/package/node-osc) | | ✅ |
-| openFrameworks | [ofxOsc](https://openframeworks.cc/documentation/ofxOsc/) | | |
+| openFrameworks | [ofxOsc](https://openframeworks.cc/documentation/ofxOsc/) | | ✅ |
